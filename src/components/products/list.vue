@@ -1,0 +1,62 @@
+<template>
+  <div class="m-products-list">
+    <el-row>
+      <ul>
+        <li v-for="item in nav" :key="item.key" :class="{'s-nav-active': item.active}">{{item.name}}</li>
+      </ul>
+    </el-row>
+    <el-row>
+        <item v-for="(item, index) in productList" :key="index" :meta="item"/>
+        <item v-for="(item, index) in productList" :key="index + '' + item" :meta="item"/>
+    </el-row>
+  </div>
+</template>
+
+<script>
+import item from './item.vue'
+import api from "@/api/api.js"
+
+export default {
+  data() {
+    return {
+      nav: [
+        {
+          key: "s-default",
+          name: "智能排序",
+          active: true
+        },
+        {
+          key: "s-price",
+          name: "价格最低",
+          active: false
+        },
+        {
+          key: "s-score",
+          name: "人气最高",
+          active: false
+        },
+        {
+          key: "s-comment",
+          name: "评价最高",
+          active: false
+        }
+      ],
+      productList: []
+    };
+  },
+  created() {
+    // 产品展示列表数据获取
+    api.getGoodsList().then(res => {
+      // console.log(res.data.data)
+      this.productList = res.data.data;
+    })
+  },
+  components: {
+      item
+  }
+};
+</script>
+
+<style lang="less" scoped>
+@import "../../assets/css/products/list.less";
+</style>

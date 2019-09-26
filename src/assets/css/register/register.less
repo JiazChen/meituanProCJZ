@@ -1,0 +1,173 @@
+.page-register {
+    .header {
+      border-bottom: 2px solid #d8d8d8;
+      min-width: 980px;
+      color: #666;
+  
+      header {
+        margin: 0 auto;
+        padding: 10px 0;
+        width: 980px;
+  
+        .site-logo {
+          display: inline-block;
+          width: 128px;
+          height: 36px;
+          background: url(https://s0.meituan.net/bs/fe-web-meituan/fa5f0f0/img/logo.png) no-repeat;
+          background-size: contain;
+        }
+  
+        .login {
+          float: right;
+          height: 36px;
+          line-height: 36px;
+          span {
+            margin-right: 10px;
+            vertical-align: sub;
+            font-size: 14px;
+          }
+          a {
+                display: inline-block;
+                width: 46px;
+                height: 24px;
+                text-align: center;
+                line-height: 24px;
+                color: #222;
+                background-image: linear-gradient(135deg,#FFD000 0,#FFBD00 100%);
+                text-decoration: none;
+                font-size: 12px;
+                font-weight: 400;
+                border-bottom: 1px solid rgb(186, 186, 186);
+          }
+        }
+  
+        .bold {
+          font-style: normal;
+          font-size: 14px;
+        }
+      }
+    }
+  
+    >.content {
+      margin: 0 auto 30px;
+      padding-top: 30px;
+      width: 980px;
+      min-height: 300px;
+      padding-right: 0px;
+      box-sizing: border-box;
+
+        .item {
+            margin-top: 20px;
+            span {
+                font-size: 12px;
+                color: #666;
+                i {
+                    vertical-align: sub;
+                    margin-right: 5px;
+                    display: inline-block;
+                    width: 17px;
+                    height: 17px;
+                    background-repeat: no-repeat;
+                    background-position: 0 -296px;
+                    background-image: url(http://s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/icons.c1b3784.png);
+                    &.active {
+                        background-position: 0 -453px;
+                    }
+                }
+            }
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+        .item-input {
+            width: 260px;
+            height: 36px;
+            margin-right: 5px;
+        }
+
+        .pw-strength {
+            position: relative;
+            width: 260px;
+            height: 20px;
+            margin-left: 110px;
+            margin-top: 10px;
+            margin-bottom: -13px;
+            background: #eee;
+            .bar {
+                background: #d3ebee;
+                height: 20px;
+                width: 0;
+                overflow: hidden;
+                transition: all .4s linear;
+                &.weak {
+                    width: 85px;
+                    background: #f76120;
+                }
+                &.normal {
+                    width: 172px;
+                    background: #ff8900;
+                }
+                &.strong {
+                    width: 260px;
+                    background: #5bab3c;
+                }
+            }
+            .strength {
+                position: absolute;
+                top: 0;
+                left: 0;
+                span {
+                    display: block;
+                    float: left;
+                    text-align: center;
+                    font-size: 12px;
+                    height: 20px;
+                    line-height: 20px;
+                    width: 85px;
+                    border-right: 2px solid #fff;
+                    color: #fff;  
+                    &:last-of-type {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+
+        .btn-register{
+            margin: 20px 0px 10px 110px;
+            width: 178px;
+            height: 36px;
+            letter-spacing: .1em;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #222;
+            background-image: linear-gradient(135deg,#FFD000 0,#FFBD00 100%);
+        }
+
+        p {
+            font-size: 13px;
+            margin-left: 110px;
+            a {
+                color: #FE8C00;
+                text-decoration: none;
+            }
+        }
+        
+    }
+    >footer {
+      color: #999;
+      border-top: 1px solid #EEE;
+      padding-top: 20px;
+      font-size: 13px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }

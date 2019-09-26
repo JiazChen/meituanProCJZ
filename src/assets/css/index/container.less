@@ -1,0 +1,149 @@
+.istyle {
+    width: 100%;
+    margin: 40px auto;
+    >dl {
+        height: 44px;
+        line-height: 44px;
+        background-color: rgb(190, 164, 116);
+        background-image: linear-gradient(to right, rgb(194, 176, 142) 3%, rgb(190, 164, 116) 100%);
+        display: flex;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: #fff;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        cursor: pointer;
+        dt {
+            font-size: 18px;
+            margin-left: 13px;
+            margin-right: 10px;
+            padding: 0 5px;
+        }
+        dd {
+            padding: 0 5px;
+            position: relative;
+            &:after {
+                position: absolute;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 7px solid #fff;
+                content: " ";
+                display: block;
+                width: 2px;
+                height: 0;
+                top: 37px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                display: none;
+            }
+            &.active:after {
+                display: block;
+            }
+        }
+    } 
+    .ibody {
+        width: 100%;
+        >ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 11px 10px 10px;
+            background-color: #fff;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            box-sizing: border-box;
+            border-left: 1px solid #e5e5e5;
+            border-right: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+
+            >li {
+                width: 33.3%;
+                height: 314px;
+                padding:5px 10px;
+                box-sizing: border-box;
+                float: left;
+                background-color: #fff;
+                transition: background-color .5s;
+                &:hover {
+                    background-color: #f4f4f4;
+                }
+
+                .el-card {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    background-color: transparent;
+                    >a {
+                        display: block;
+                        width: 100%;
+                        height: 208px;
+                        margin-bottom: 11px;
+                        img {
+                            max-width: 100%;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .card-body{
+                        .title {
+                            font-size: 16px;
+                            color: #222;
+                            height: 22px;
+                            line-height: 22px;
+                            margin-bottom: 8px;
+                            font-weight: 600;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            cursor: pointer;
+                        }
+                        .sub-title {
+                            font-size: 12px;
+                            color: #999;
+                            line-height: 18px;
+                            height: 18px;
+                            margin-bottom: 7px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        .price-info{
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            height: 27px;
+                            overflow: hidden;
+                            margin-bottom: 10px;
+                            .price-symbol {
+                                font-size: 14px;
+                                color: #BE9E4D;
+                                font-weight: 500;
+                            }
+                            .cur-price {
+                                font-size: 22px;
+                                color: #BE9E4D;
+                                margin-right: 6px;
+                                letter-spacing: -.8px;
+                                cursor: pointer;
+                            }
+                            .old-price {
+                                font-size: 12px;
+                                color: #999;
+                                text-decoration: line-through;
+                            }
+                            .address {
+                                position: absolute;
+                                right: 0;
+                                font-size: 12px;
+                                color: #999;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
