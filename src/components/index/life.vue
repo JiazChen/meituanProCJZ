@@ -40,7 +40,6 @@
                             </el-button>
                         </p>
                     </template>
-                    <img v-else class="user-info" src="../../assets/img/user-bottom.png" width="230" height="116">
                 </div>
             </el-col>
         </el-row>
