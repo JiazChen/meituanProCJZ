@@ -10,8 +10,8 @@
         </dl>
         <div class="detail" v-if="detailData" @mouseenter="enterDetail" @mouseleave="leaveDetail">
             <div v-for="(item2, index2) in detailData" :key="item2 + '' + index2">
-                <h4 >{{ item2.title }}</h4>
-                <span v-for="(t, i) in item2.items" :key="t + '' + i">{{ t }}</span>
+                <h4 >{{ item2.name }}</h4>
+                <span v-for="(t, i) in item2.detailList" :key="t + '' + i">{{ t }}</span>
             </div>
         </div>
     </div>
@@ -25,234 +25,234 @@ export default {
         return {
             detailData: null,
             menuList: [
-                // {
-                //     title: '美食',
-                //     url: '#',
-                //     icon: 'food',
-                //     children: [
-                //         {
-                //             title: '美食',
-                //             detailList: ['代金券', '甜点饮品', '火锅', '自助餐']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '外卖',
-                //     url: '#',
-                //     icon: 'takeout',
-                //     children: [
-                //         {
-                //             title: '外卖',
-                //             detailList: ['美团外卖']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '酒店',
-                //     url: '#',
-                //     icon: 'hotel',
-                //     children: [
-                //         {
-                //             title: '酒店型机',
-                //             detailList: ['经济型', '舒适/三星', '高档/四星', '豪华/五星']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '榛果民宿',
-                //     url: '#',
-                //     icon: 'homestay',
-                //     children: [
-                //         {
-                //             title: '1热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '猫眼电影',
-                //     url: '#',
-                //     icon: 'movie',
-                //     children: [
-                //         {
-                //             title: '2热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '机票 / 火车票',
-                //     url: '#',
-                //     icon: 'airport',
-                //     children: [
-                //         {
-                //             title: '3热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '休闲娱乐 / KTV',
-                //     url: '#',
-                //     icon: 'ktv',
-                //     children: [
-                //         {
-                //             title: '4热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '生活服务',
-                //     url: '#',
-                //     icon: 'life',
-                //     children: [
-                //         {
-                //             title: '5热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '丽人 / 美发 / 医学美容',
-                //     url: '#',
-                //     icon: 'hair',
-                //     children: [
-                //         {
-                //             title: '6热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '结婚 / 婚纱摄影 / 婚宴',
-                //     url: '#',
-                //     icon: 'marry',
-                //     children: [
-                //         {
-                //             title: '7热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '亲子 / 儿童乐园 / 幼教',
-                //     url: '#',
-                //     icon: 'offspring',
-                //     children: [
-                //         {
-                //             title: '8热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '运动健身 / 健身中心',
-                //     url: '#',
-                //     icon: 'sport',
-                //     children: [
-                //         {
-                //             title: '9热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '家装 / 建材 / 家居',
-                //     url: '#',
-                //     icon: 'furniture',
-                //     children: [
-                //         {
-                //             title: '10热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '学习培训 / 音乐培训',
-                //     url: '#',
-                //     icon: 'study',
-                //     children: [
-                //         {
-                //             title: '11热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '医疗健康 / 宠物 / 爱车',
-                //     url: '#',
-                //     icon: 'health',
-                //     children: [
-                //         {
-                //             title: '12热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: '酒吧 / 密室逃脱',
-                //     url: '#',
-                //     icon: 'bar',
-                //     children: [
-                //         {
-                //             title: '13热门城市',
-                //             detailList: ['上海', '北京', '成都', '重庆']
-                //         },
-                //         {
-                //             title: '热门房源',
-                //             detailList: ['复式Loft', '别墅']
-                //         }
-                //     ]
-                // }
+                {
+                    name: '美食',
+                    url: '#',
+                    type: 'food',
+                    items: [
+                        {
+                            name: '美食',
+                            detailList: ['代金券', '甜点饮品', '火锅', '自助餐']
+                        }
+                    ]
+                },
+                {
+                    name: '外卖',
+                    url: '#',
+                    type: 'takeout',
+                    items: [
+                        {
+                            name: '外卖',
+                            detailList: ['美团外卖']
+                        }
+                    ]
+                },
+                {
+                    name: '酒店',
+                    url: '#',
+                    type: 'hotel',
+                    items: [
+                        {
+                            name: '酒店型机',
+                            detailList: ['经济型', '舒适/三星', '高档/四星', '豪华/五星']
+                        }
+                    ]
+                },
+                {
+                    name: '榛果民宿',
+                    url: '#',
+                    type: 'homestay',
+                    items: [
+                        {
+                            name: '1热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '猫眼电影',
+                    url: '#',
+                    type: 'movie',
+                    items: [
+                        {
+                            name: '2热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '机票 / 火车票',
+                    url: '#',
+                    type: 'airport',
+                    items: [
+                        {
+                            name: '3热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '休闲娱乐 / KTV',
+                    url: '#',
+                    type: 'ktv',
+                    items: [
+                        {
+                            name: '4热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '生活服务',
+                    url: '#',
+                    type: 'life',
+                    items: [
+                        {
+                            name: '5热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '丽人 / 美发 / 医学美容',
+                    url: '#',
+                    type: 'hair',
+                    items: [
+                        {
+                            name: '6热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '结婚 / 婚纱摄影 / 婚宴',
+                    url: '#',
+                    type: 'marry',
+                    items: [
+                        {
+                            name: '7热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '亲子 / 儿童乐园 / 幼教',
+                    url: '#',
+                    type: 'offspring',
+                    items: [
+                        {
+                            name: '8热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '运动健身 / 健身中心',
+                    url: '#',
+                    type: 'sport',
+                    items: [
+                        {
+                            name: '9热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '家装 / 建材 / 家居',
+                    url: '#',
+                    type: 'furniture',
+                    items: [
+                        {
+                            name: '10热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '学习培训 / 音乐培训',
+                    url: '#',
+                    type: 'study',
+                    items: [
+                        {
+                            name: '11热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '医疗健康 / 宠物 / 爱车',
+                    url: '#',
+                    type: 'health',
+                    items: [
+                        {
+                            name: '12热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                },
+                {
+                    name: '酒吧 / 密室逃脱',
+                    url: '#',
+                    type: 'bar',
+                    items: [
+                        {
+                            name: '13热门城市',
+                            detailList: ['上海', '北京', '成都', '重庆']
+                        },
+                        {
+                            name: '热门房源',
+                            detailList: ['复式Loft', '别墅']
+                        }
+                    ]
+                }
             ]
         }
     },
@@ -276,10 +276,10 @@ export default {
     },
     created() {
         // 首页左侧导航条 导航数据
-        api.getNavData().then(res => {
-            // console.log(res.data.data)
-            this.menuList = res.data.data;
-        })
+        // api.getNavData().then(res => {
+        //     // console.log(res.data.data)
+        //     this.menuList = res.data.data;
+        // })
     }
 }
 </script>
